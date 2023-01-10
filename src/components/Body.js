@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Summary from "./Summary";
+import SummaryInput from "./SummaryInput";
 import data from "../data";
 
 class Body extends Component {
@@ -16,14 +17,25 @@ class Body extends Component {
 
     render() {
         return (
-            <article>
-                <div>
-                    Summary:
+            <div className="tile is-parent">
+                    <article className="tile is-child notification box">
+                        <div className="subtitle per-heading">
+                            Summary:
+                            <i
+                                className="fa fa-pencil per-edit"
+                                aria-hidden="true"
+                                onClick={this.editSum}
+                            ></i>
+                        </div>
+                        <div className="content">
+                            {this.state.sumEdit ? (
+                                <SummaryInput done={this.editSum} />
+                            ) : (
+                                <Summary summary={data.summary} />
+                            )}
+                        </div>
+                    </article>
                 </div>
-                <div className="content">
-                    <Summary summary={data.summary} />
-                </div>
-            </article>
         )
     }
 }

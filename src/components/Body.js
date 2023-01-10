@@ -17,7 +17,8 @@ class Body extends Component {
 
     render() {
         return (
-            <div className="tile is-parent">
+            <div className="tile is-ancestor is-vertical">
+                <div className="tile is-parent">
                     <article className="tile is-child notification box">
                         <div className="subtitle per-heading">
                             Summary:
@@ -36,6 +37,7 @@ class Body extends Component {
                         </div>
                     </article>
                 </div>
+            </div>
         )
     }
 }

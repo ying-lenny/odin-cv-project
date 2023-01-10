@@ -8,29 +8,28 @@ class SummaryInput extends Component {
             summary: data.summary,
         };
         this.handleChange = this.handleChange.bind(this);
-        this.changeSum = this.changeSum.bind(this);
+        this.changeSumm = this.changeSumm.bind(this);
     }
-    changeSum(e) {
+    changeSumm(e) {
         data.summary = this.state.summary.trim();
         this.props.done();
     }
     handleChange(e) {
-        this.setState({ [e.target.id]: e.target.value});
+        this.setState({ [e.target.id]: e.target.value });
     }
-
     render() {
         return (
-            <form onSubmit={this.changeSum}>
+            <form onSubmit={this.changeSumm}>
                 <textarea
-                    placeholder='Give us a sumamry'
-                    id='summary'
+                    placeholder="write something about yourself..."
+                    id="summary"
                     value={this.state.summary}
                     onChange={this.handleChange}
                     className="summary-ta"
                 />
                 <br />
                 <button>Submit</button>
-                <button onClick={this.props.done}> Cancel </button>
+                <button onClick={this.props.done}>Cancel</button>
             </form>
         );
     }

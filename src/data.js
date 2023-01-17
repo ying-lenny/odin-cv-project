@@ -1,5 +1,5 @@
 let data = {
-    name: { first: 'Some', last: 'Name' },
+    name: { first: 'First', last: 'Last' },
     contact: {
         phone: '000-000-000',
         email: 'email@email.com',
@@ -8,13 +8,13 @@ let data = {
     social: [
         {
             id: 0,
-            website: 'Instagram',
-            userName: 'insta_gram_',
+            website: 'Twitta',
+            userName: 'Twitta_gram_',
         },
         {
             id: 1,
-            website: 'Facebook',
-            userName: 'facebook',
+            website: 'Github',
+            userName: 'YingLenny',
         },
     ],
     interests: ['things', 'you', 'like', 'doing'],

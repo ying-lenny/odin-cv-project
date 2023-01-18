@@ -19,6 +19,17 @@ class Personal extends React.Component {
             <section className="hero">
                 <div className="hero-body">
                     <div className="container">
+                    <div>
+                        <span className="title">
+                            {' '}
+                            {data.name.first + ' '}{' '}
+                        </span>
+                        <span className="title">
+                            {' '}
+                            {data.name.last}{' '}
+                        </span>
+                    </div>
+                    {/* Section for Contact Info */}
                     {this.state.contactEdit ? (
                         <ContactInput done={this.editContact} />
                     ) : (

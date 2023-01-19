@@ -3,6 +3,7 @@ import data from '../data';
 import NameInput from "./NameInput";
 import Contact from "./Contact";
 import ContactInput from "./ContactInput";
+import Social from "./Social";
 
 class Personal extends React.Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class Personal extends React.Component {
         this.state = {
             nameEdit: false,
             contactEdit: false,
+            socData: data.social,
         };
         this.editName = this.editName.bind(this);
         this.editContact = this.editContact.bind(this);
@@ -45,17 +47,32 @@ class Personal extends React.Component {
                                 ></i>
                             </div>
                         )}
-                        {/* Section for Contact Info */}
-                        {this.state.contactEdit ? (
-                            <ContactInput done={this.editContact} />
-                        ) : (
-                            <Contact data={data.contact} done={this.editContact} />
-                        )}
                     </div>
+                    {/* Section for Contact Info */}
+                    {this.state.contactEdit ? (
+                            <ContactInput done={this.editContact} />
+                    ) : (
+                        <Contact data={data.contact} done={this.editContact} />
+                    )}
+                    {data.social && (
+                        <div className="container has-text-black">
+                            <div className="is-size-5 has-text-weight-bold per-heading">
+                                Social
+                                <i
+                                    className="fa fa-pencil per-edit"
+                                    aria-hidden="true"
+                                    onClick={this.editSocial}
+                                ></i>
+                            </div>
+                            <Social
+                                data={data.social}
+                                edit={this.state.socialEdit}
+                            />
+                        </div>
+                    )}
                 </div>
             </section>
         )
-        
     }
 }
 

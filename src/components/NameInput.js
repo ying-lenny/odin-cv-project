@@ -19,7 +19,6 @@ class NameInput extends Component {
         }
         data.name.first = this.state.firstName;
         data.name.last = this.state.lastName;
-        e.preventDefault();
         this.props.done();
     }
     handleChange(e) {
@@ -44,7 +43,6 @@ class NameInput extends Component {
                 ></input>
                 <br />
                 <button>Submit</button>
-                <button onClick={this.props.done}>Cancel</button>
             </form>
         );
     }

@@ -55,6 +55,7 @@ class ContactInput extends Component {
                 ></input>
                 <br />
                 <button>Submit</button>
+                <button onClick={this.props.done}>Cancel</button>
             </form>
         );
     }

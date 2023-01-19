@@ -15,7 +15,7 @@ class Personal extends React.Component {
         this.editContact = this.editContact.bind(this);
     }
     editName() {
-        this.setState({ nameEdit: !this.state.contactEdit});
+        this.setState({ nameEdit: !this.state.nameEdit});
     }
     editContact() {
         this.setState({ contactEdit: !this.state.contactEdit});
@@ -25,6 +25,7 @@ class Personal extends React.Component {
             <section className="hero">
                 <div className="hero-body">
                     <div className="container">
+                        {/* Section for Name */}
                         {this.state.nameEdit ? (
                             <NameInput done={this.editName} />
                         ) : (
@@ -44,12 +45,12 @@ class Personal extends React.Component {
                                 ></i>
                             </div>
                         )}
-                    {/* Section for Contact Info */}
-                    {this.state.contactEdit ? (
-                        <ContactInput done={this.editContact} />
-                    ) : (
-                        <Contact data={data.contact} done={this.editContact} />
-                    )}
+                        {/* Section for Contact Info */}
+                        {this.state.contactEdit ? (
+                            <ContactInput done={this.editContact} />
+                        ) : (
+                            <Contact data={data.contact} done={this.editContact} />
+                        )}
                     </div>
                 </div>
             </section>

@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import data from "../data";
+import React, { Component } from 'react';
+import data from '../data';
 
 class NameInput extends Component {
     constructor(props) {
@@ -14,13 +14,13 @@ class NameInput extends Component {
     changeName(e) {
         if (!this.state.firstName.trim() || !this.state.lastName.trim()) {
             this.props.done();
-            e.preventDefault()
+            e.preventDefault();
             return;
         }
-        data.name.first = this.state.firstName.trim();
-        data.name.last = this.state.lastName.trim();
-        this.props.done()
-        console.log("Hi")
+        data.name.first = this.state.firstName;
+        data.name.last = this.state.lastName;
+        e.preventDefault();
+        this.props.done();
     }
     handleChange(e) {
         this.setState({ [e.target.id]: e.target.value });
@@ -42,10 +42,11 @@ class NameInput extends Component {
                     value={this.state.lastName}
                     onChange={this.handleChange}
                 ></input>
-                <br/>
+                <br />
                 <button>Submit</button>
+                <button onClick={this.props.done}>Cancel</button>
             </form>
-        )
+        );
     }
 }
 

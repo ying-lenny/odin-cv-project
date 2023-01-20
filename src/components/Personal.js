@@ -5,6 +5,7 @@ import Contact from "./Contact";
 import ContactInput from "./ContactInput";
 import Social from "./Social";
 import SocialInput from "./SocialInput";
+import Interests from "./Interests";
 
 class Personal extends React.Component {
     constructor(props) {
@@ -14,10 +15,12 @@ class Personal extends React.Component {
             contactEdit: false,
             socialEdit: false,
             socData: data.social,
+            interestEdit: false,
         };
         this.editName = this.editName.bind(this);
         this.editContact = this.editContact.bind(this);
         this.editSocial = this.editSocial.bind(this);
+        this.editInterest = this.editInterest.bind(this);
     }
     editName() {
         this.setState({ nameEdit: !this.state.nameEdit });
@@ -27,6 +30,9 @@ class Personal extends React.Component {
     }
     editSocial() {
         this.setState({ socialEdit: !this.state.socialEdit });
+    }
+    editInterest() {
+        this.setState({ interestEdit: !this.state.interestEdit });
     }
     render() {
         return (
@@ -60,10 +66,11 @@ class Personal extends React.Component {
                     ) : (
                         <Contact data={data.contact} done={this.editContact} />
                     )}
+                    {/* Section for Social Media Info */}
                     {data.social && (
                         <div className="container has-text-black">
                             <div className="is-size-5 has-text-weight-bold per-heading">
-                                Social
+                                Social Media
                                 <i
                                     className="fa fa-pencil per-edit"
                                     aria-hidden="true"
@@ -76,6 +83,22 @@ class Personal extends React.Component {
                             <Social
                                 data={data.social}
                                 edit={this.state.socialEdit}
+                            />
+                        </div>
+                    )}
+                    {/* Section for Interests */}
+                    {data.interests && (
+                        <div className="container has-text-black">
+                            <div className="is-size-5 has-text-weight-bold per-heading">
+                                Interests
+                                <i
+                                    className="fa fa-pencil per-edit"
+                                    aria-hidden="true"
+                                    onClick={this.editInterest}
+                                ></i>
+                            </div>
+                            <Interests
+                                data={data.interests}
                             />
                         </div>
                     )}

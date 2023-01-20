@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import data from "../data";
 
 class ContactInput extends Component {

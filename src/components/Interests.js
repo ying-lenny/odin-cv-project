@@ -21,7 +21,7 @@ class Interests extends Component {
                     {this.props.edit ? (
                         <i
                             id={index}
-                            className="fa fa=trash per-edit"
+                            className="fa fa-trash per-edit"
                             onClick={this.delInt}
                         ></i>
                     ) : null}

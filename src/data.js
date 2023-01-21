@@ -55,27 +55,27 @@ let data = {
     skills: [
         {
             id: 0,
-            name: 'Skill 1',
+            name: 'Dancing',
             rating: 3,
         },
         {
             id: 1,
-            name: 'Skill 2',
+            name: 'Prancing',
             rating: 5,
         },
         {
             id: 2,
-            name: 'Skill 3',
+            name: 'Romancing',
             rating: 4,
         },
         {
             id: 3,
-            name: 'Skill 4',
+            name: 'Bashing',
             rating: 4,
         },
         {
             id: 4,
-            name: 'Skill 5',
+            name: 'Rancing',
             rating: 5,
         },
     ],

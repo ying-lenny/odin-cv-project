@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Summary from "./Summary";
 import SummaryInput from "./SummaryInput";
+import Skills from "./Skills";
 import data from "../data";
 
 class Body extends Component {
@@ -20,6 +21,7 @@ class Body extends Component {
             <div className="tile is-ancestor is-vertical">
                 <div className="tile is-parent">
                     <article className="tile is-child notification box">
+                        {/* Summary Section */}
                         <div className="subtitle per-heading">
                             Summary:
                             <i
@@ -35,6 +37,18 @@ class Body extends Component {
                                 <Summary summary={data.summary} />
                             )}
                         </div>
+                    </article>
+                </div>
+                {/* Skills section */}
+                <div className="tile is-parent">
+                    <article className="tile is-child notification box">
+                        <div className="subtitle per-heading">
+                            Skills:
+                        </div>
+                        <Skills
+                                skills={data.skills}
+                                edit={this.state.skillEdit}
+                            />
                     </article>
                 </div>
             </div>

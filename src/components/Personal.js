@@ -62,6 +62,14 @@ class Personal extends React.Component {
                         )}
                     </div>
                     {/* Section for Contact Info */}
+                    <div className="is-size-5 has-text-weight-bold per-heading">
+                        Contact Me
+                        <i
+                            className="fa fa-pencil per-edit"
+                            aria-hidden="true"
+                            onClick={this.editContact}
+                        ></i>
+                    </div>
                     {this.state.contactEdit ? (
                             <ContactInput done={this.editContact} />
                     ) : (

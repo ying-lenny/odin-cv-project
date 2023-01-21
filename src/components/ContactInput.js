@@ -21,11 +21,7 @@ class ContactInput extends Component {
     render() {
         return (
             <form onSubmit={this.changeContact}>
-                <div className="is-size-5 has-text-weight-bold per-heading">
-                    Contact Me
-                </div>
-                <label>Phone:</label>
-                <br />
+                <label>Phone: </label>
                 <input
                     type="text"
                     placeholder="Phone"
@@ -34,8 +30,7 @@ class ContactInput extends Component {
                     onChange={this.handleChange}
                 ></input>
                 <br />
-                <label>email:</label>
-                <br />
+                <label>Email: </label>
                 <input
                     type="text"
                     placeholder="email"
@@ -44,8 +39,7 @@ class ContactInput extends Component {
                     onChange={this.handleChange}
                 ></input>
                 <br />
-                <label>Linkedin profile:</label>
-                <br />
+                <label>Linkedin profile: </label>
                 <input
                     type="text"
                     placeholder="Linkedin"

@@ -37,8 +37,7 @@ class SocialInput extends Component {
     render() {
         return (
             <form onSubmit={this.handleForm}>
-                <label>Website:</label>
-                <br/>
+                <label>Website: </label>
                 <input
                     type="text"
                     placeholder="Think of a damn site boy"
@@ -47,8 +46,7 @@ class SocialInput extends Component {
                     onChange={this.handleChange}
                 ></input>
                 <br/>
-                <label>Username:</label>
-                <br/>
+                <label>Username: </label>
                 <input
                     type="text"
                     placeholder="Think of a damn username boy"
@@ -58,6 +56,7 @@ class SocialInput extends Component {
                 ></input>
                 <br/>
                 <button>Submit</button>
+                <button onClick={this.props.done}>Cancel</button>
             </form>
         );
     }

@@ -10,14 +10,6 @@ class Contact extends Component {
         let { phone, email, linkedIn } = this.props.data;
         return (
             <div className="container has-text-black">
-                <div className="is-size-5 has-text-weight-bold per-heading">
-                    Contact Me
-                    <i
-                        className="fa fa-pencil per-edit"
-                        aria-hidden="true"
-                        onClick={this.props.done}
-                    ></i>
-                </div>
                 {phone === '' || (
                     <div className="container">
                         <span className="subtitle has-text-black">Phone: </span>

@@ -25,8 +25,7 @@ class InterestInput extends Component {
     render() {
         return (
             <form onSubmit={this.addHobby}>
-                <label>Interest:</label>
-                <br/>
+                <label>Interest: </label>
                 <input
                     type="text"
                     placeholder="Cooking"
@@ -36,6 +35,7 @@ class InterestInput extends Component {
                 ></input>
                 <br/>
                 <button>Add</button>
+                <button onClick={this.props.done}>Cancel</button>
             </form>
         );
     }

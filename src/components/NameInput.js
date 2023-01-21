@@ -27,6 +27,7 @@ class NameInput extends Component {
     render() {
         return (
             <form onSubmit={this.changeName}>
+                <label>First name: </label>
                 <input
                     type="text"
                     placeholder="First Name"
@@ -34,6 +35,8 @@ class NameInput extends Component {
                     value={this.state.firstName}
                     onChange={this.handleChange}
                 ></input>
+                <br/>
+                <label>Last name: </label>
                 <input
                     type="text"
                     placeholder="Last Name"
@@ -43,6 +46,7 @@ class NameInput extends Component {
                 ></input>
                 <br />
                 <button>Submit</button>
+                <button onClick={this.props.done}>Cancel</button>
             </form>
         );
     }

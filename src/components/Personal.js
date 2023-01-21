@@ -6,6 +6,7 @@ import ContactInput from "./ContactInput";
 import Social from "./Social";
 import SocialInput from "./SocialInput";
 import Interests from "./Interests";
+import InterestInput from "./InterestInput";
 
 class Personal extends React.Component {
     constructor(props) {
@@ -97,8 +98,12 @@ class Personal extends React.Component {
                                     onClick={this.editInterest}
                                 ></i>
                             </div>
+                            {this.state.interestEdit ? (
+                                <InterestInput done={this.editInterest} />
+                            ) : null}
                             <Interests
                                 data={data.interests}
+                                edit={this.state.interestEdit}
                             />
                         </div>
                     )}

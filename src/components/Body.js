@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Summary from "./Summary";
 import SummaryInput from "./SummaryInput";
 import Skills from "./Skills";
+import SkillsInput from "./SkillsInput";
 import data from "../data";
 
 class Body extends Component {
@@ -9,11 +10,16 @@ class Body extends Component {
         super(props);
         this.state = {
             sumEdit: false,
+            skillEdit: false
         };
         this.editSum = this.editSum.bind(this); 
+        this.editSkill = this.editSkill.bind(this);
     }
     editSum() {
         this.setState({ sumEdit: !this.state.sumEdit });
+    }
+    editSkill() {
+        this.setState({ skillEdit: !this.state.sumEdit });
     }
 
     render() {
@@ -44,11 +50,21 @@ class Body extends Component {
                     <article className="tile is-child notification box">
                         <div className="subtitle per-heading">
                             Skills:
+                            <i
+                                className="fa fa-pencil per-edit"
+                                aria-hidden="true"
+                                onClick={this.editSkill}
+                            ></i>
                         </div>
-                        <Skills
+                        <div className="content">
+                            {this.state.skillEdit ? (
+                                <SkillsInput done={this.editSkill} />
+                            ) : null}
+                            <Skills
                                 skills={data.skills}
                                 edit={this.state.skillEdit}
                             />
+                        </div>
                     </article>
                 </div>
             </div>

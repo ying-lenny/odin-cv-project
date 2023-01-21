@@ -1,0 +1,63 @@
+import React, { Component } from "react";
+import data from "../data";
+
+class SkillsInput extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: '',
+            rating: 0,
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.addSkill = this.addSkill.bind(this);
+    }
+    addSkill(e) {
+        let { name, rating } = this.state;
+        if (name.trim() === '') {
+            this.props.done();
+            e.preventDefault();
+            return;
+        }
+        const obj = (() => {
+            return { id: '', name, rating };
+        })();
+        data.skills = data.skills.map((skill, index) => {
+            return { ...skill, id: index };
+        });
+        data.skills.push({ ...obj, id: data.skills.length });
+        this.props.done();
+        e.preventDefault();
+    }
+    handleChange(e) {
+        this.setState({ [e.target.id]: e.target.value });
+    }
+    render() {
+        return (
+        <div className="level box">
+            <form onSubmit={this.addSkill}>
+                <label>Add Skill: </label>
+                <input
+                    type="text"
+                    placeholder="teamwork?"
+                    id="name"
+                    value={this.state.name}
+                    onChange={this.handleChange}
+                ></input>
+                <br/>
+                <label>Rating between 1 - 5: </label>
+                <input
+                    type="number"
+                    min={0}
+                    max={5}
+                    id="rating"
+                    onChange={this.handleChange}
+                ></input>
+                <br />
+                <button>Submit</button>
+                <button onClick={this.props.done}>Cancel</button>
+            </form>
+        </div>
+    )}
+}
+
+export default SkillsInput;

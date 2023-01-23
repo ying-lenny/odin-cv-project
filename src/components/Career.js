@@ -19,10 +19,10 @@ class Career extends Component {
         let careerArray = this.props.career.map((work, index) => {
             return (
                 <div className="level box" key={index}>
-                    <div className="level left">
+                    <div className="level-left">
                         <div className="subtitle">{work.year}</div>
                     </div>
-                    <div className="level right">
+                    <div className="level-right">
                         <div>
                             <div
                                 className="subtitle"

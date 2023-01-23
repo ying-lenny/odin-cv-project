@@ -1,26 +1,27 @@
-import React, { Component } from "react";
-import data from "../data";
+import React, { Component } from 'react';
+import data from '../data';
 
 class Education extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            education: this.props.education,
+            edu: this.props.edu,
         };
-        this.deleteEducation = this.deleteEducation.bind(this);
+        this.delEdu = this.delEdu.bind(this);
     }
 
-    deleteEducation(e) {
+    delEdu(e) {
         data.education.splice(Number(e.target.id), 1);
-        this.setState({education: data.education});
+        this.setState({ edu: data.education });
     }
-
     render() {
-        let careerArray = this.props.education.map((study, index) => {
+        let carArr = this.props.edu.map((study, index) => {
             return (
                 <div className="level box" key={index}>
                     <div className="level-left">
-                        <div className="subtitle">{study.year}</div>
+                        <div>
+                            <div className="subtitle">{study.year}</div>
+                        </div>
                     </div>
                     <div className="level-right">
                         <div>
@@ -33,7 +34,7 @@ class Education extends Component {
                                     <span
                                         id={index}
                                         className="fa fa-trash info-del"
-                                        onClick={this.deleteEducation}
+                                        onClick={this.delEdu}
                                     ></span>
                                 ) : null}
                             </div>
@@ -43,9 +44,9 @@ class Education extends Component {
                         </div>
                     </div>
                 </div>
-            )
+            );
         });
-        return <div>{careerArray}</div>
+        return <div>{carArr}</div>;
     }
 }
 

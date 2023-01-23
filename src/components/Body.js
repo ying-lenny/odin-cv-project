@@ -93,6 +93,9 @@ class Body extends Component {
                             ></i>
                         </div>
                         <div className="content">
+                            {this.state.eduEdit ? (
+                                <EducationInput done={this.editEducation} />
+                            ) : null}
                             <Education
                                 edu={data.education}
                                 edit={this.state.editEducation}

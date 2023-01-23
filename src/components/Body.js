@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Summary from "./Summary";
 import SummaryInput from "./SummaryInput";
+import Career from "./Career";
 import Skills from "./Skills";
 import SkillsInput from "./SkillsInput";
 import data from "../data";
@@ -10,13 +11,18 @@ class Body extends Component {
         super(props);
         this.state = {
             sumEdit: false,
-            skillEdit: false
+            careerEdit: false,
+            skillEdit: false,
         };
         this.editSum = this.editSum.bind(this); 
+        this.editCareer = this.editCareer.bind(this);
         this.editSkill = this.editSkill.bind(this);
     }
     editSum() {
         this.setState({ sumEdit: !this.state.sumEdit });
+    }
+    editCareer() {
+        this.setState({ careerEdit: !this.state.careerEdit });
     }
     editSkill() {
         this.setState({ skillEdit: !this.state.sumEdit });
@@ -43,6 +49,14 @@ class Body extends Component {
                                 <Summary summary={data.summary} />
                             )}
                         </div>
+                    </article>
+                </div>
+                {/* Career section */}
+                <div className="tile is-parent">
+                    <article className="tile is-child notification box">
+                        <Career
+                            career={data.career}
+                        />
                     </article>
                 </div>
                 {/* Skills section */}

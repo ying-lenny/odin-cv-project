@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Summary from "./Summary";
 import SummaryInput from "./SummaryInput";
 import Career from "./Career";
+import CareerInput from "./CareerInput";
 import Skills from "./Skills";
 import SkillsInput from "./SkillsInput";
 import data from "../data";
@@ -54,9 +55,23 @@ class Body extends Component {
                 {/* Career section */}
                 <div className="tile is-parent">
                     <article className="tile is-child notification box">
-                        <Career
-                            career={data.career}
-                        />
+                        <div className="subtitle per-heading">
+                            Career:
+                            <i
+                                className="fa fa-pencil per-edit"
+                                aria-hidden="true"
+                                onClick={this.editCareer}
+                            ></i>
+                        </div>
+                        <div className="content">
+                            {this.state.careerEdit ? (
+                                <CareerInput done={this.editCareer} />
+                            ) : null}
+                            <Career
+                                career={data.career}
+                                edit={this.state.careerEdit}
+                            />
+                        </div>
                     </article>
                 </div>
                 {/* Skills section */}

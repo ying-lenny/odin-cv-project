@@ -93,7 +93,7 @@ class Body extends Component {
                             ></i>
                         </div>
                         <div className="content">
-                            {this.state.eduEdit ? (
+                            {this.state.educationEdit ? (
                                 <EducationInput done={this.editEducation} />
                             ) : null}
                             <Education

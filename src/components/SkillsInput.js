@@ -50,6 +50,7 @@ class SkillsInput extends Component {
                     min={0}
                     max={5}
                     id="rating"
+                    value={this.state.rating}
                     onChange={this.handleChange}
                 ></input>
                 <br />

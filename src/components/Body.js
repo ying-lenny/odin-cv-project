@@ -33,7 +33,7 @@ class Body extends Component {
         this.setState({ educationEdit: !this.state.educationEdit });
     }
     editSkill() {
-        this.setState({ skillEdit: !this.state.sumEdit });
+        this.setState({ skillEdit: !this.state.skillEdit });
     }
 
     render() {
@@ -120,7 +120,7 @@ class Body extends Component {
                             ) : null}
                             <Skills
                                 skills={data.skills}
-                                edit={this.state.skillEdit}
+                                edit={this.state.editSkill}
                             />
                         </div>
                     </article>
